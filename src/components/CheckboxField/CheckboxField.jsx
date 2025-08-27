@@ -8,6 +8,7 @@ export const CheckboxField = ({
   onBlur,
   error,
   required = false,
+  ...props
 }) => {
   const id = `checkbox-${name}`;
 
@@ -25,6 +26,7 @@ export const CheckboxField = ({
           aria-invalid={!!error}
           aria-describedby={error ? `${id}-error` : undefined}
           className={`${styles.input} ${error ? styles.invalid : ""}`}
+          {...props}
         />
         {label}
       </label>

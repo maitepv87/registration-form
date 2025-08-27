@@ -1,6 +1,6 @@
 import { useFormReducer } from "../hooks";
 import { useState } from "react";
-import { TextField, CheckboxField, ButtonBase } from "./";
+import { TextField, CheckboxField, ButtonBase, SelectField } from "./";
 import styles from "../styles/RegistrationForm.module.css";
 
 const initialForm = {
@@ -8,6 +8,7 @@ const initialForm = {
   email: "",
   password: "",
   confirm: "",
+  country: "",
   agree: false,
 };
 
@@ -32,6 +33,20 @@ export const RegistrationForm = () => {
           onChange={onChange}
           required
           error={errors.name}
+        />
+
+        <SelectField
+          label="Country"
+          name="country"
+          checked={state.country}
+          options={[
+            { label: "USA", value: "us" },
+            { label: "Canada", value: "ca" },
+            { label: "Cuba", value: "cu" },
+          ]}
+          onChange={onChange}
+          required
+          error={errors.country}
         />
 
         <TextField

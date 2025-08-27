@@ -1,16 +1,18 @@
-import styles from "./TextField.module.css";
+import styles from "./SelectField.module.css";
 
-export const TextField = ({
+export const SelectField = ({
   label,
   name,
-  type = "text",
   value,
+  options = [],
   onChange,
   onBlur,
   error,
   required = false,
+  disabled = false,
+  ...props
 }) => {
-  const id = `input-${name}`;
+  const id = `select-${name}`;
 
   return (
     <div className={styles.field}>
@@ -18,19 +20,31 @@ export const TextField = ({
         {label}
       </label>
 
-      <input
-        type={type}
+      <select
         id={id}
         name={name}
         value={value}
         onChange={onChange}
         onBlur={onBlur}
         required={required}
+        disabled={disabled}
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         className={`${styles.input} ${error ? styles.invalid : ""}`}
-      />
-
+        {...props}
+      >
+        {options.length === 0 ? (
+          <option disabled>No options available</option>
+        ) : (
+          options.map((option) =>
+            typeof option === "object" && option.value && option.label ? (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ) : null
+          )
+        )}
+      </select>
       {error && (
         <span id={`${id}-error`} className={styles.errorMessage}>
           {error}

@@ -9,6 +9,7 @@ export const TextField = ({
   onBlur,
   error,
   required = false,
+  ...props
 }) => {
   const id = `input-${name}`;
 
@@ -29,6 +30,7 @@ export const TextField = ({
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         className={`${styles.input} ${error ? styles.invalid : ""}`}
+        {...props}
       />
 
       {error && (
