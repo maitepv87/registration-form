@@ -1,3 +1,20 @@
+/**
+ * Accessible CheckboxField component
+ *
+ * Includes label, error messaging, ARIA attributes, and modular CSS.
+ * Designed for editorial clarity, onboarding, and scalable form architecture.
+ *
+ * Usage:
+ * <CheckboxField
+ *   label="I agree to the terms"
+ *   name="agree"
+ *   checked={state.agree}
+ *   onChange={onChange}
+ *   required
+ *   error={errors.agree}
+ * />
+ */
+
 import styles from "./CheckboxField.module.css";
 
 export const CheckboxField = ({

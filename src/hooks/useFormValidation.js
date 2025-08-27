@@ -1,8 +1,33 @@
+/**
+ * useFormValidation
+ *
+ * Custom validation hook for controlled forms.
+ * Returns an object of field-specific error messages.
+ * Designed for editorial clarity, onboarding, and reusability.
+ *
+ * @param {Object} state - Current form state object.
+ * @returns {Object} errors - Object with validation messages keyed by field name.
+ *
+ * Usage:
+ * const [errors, setErrors] = useState({})
+ * const handleSubmit = (e) => {
+ *   e.preventDefault();
+ *   const newErrors = useFormValidation(state);
+ *   setErrors(newErrors);
+ *
+ *   if (Object.keys(newErrors).length === 0) {
+ *     console.log("Form submitted:", state);
+ *   }
+ * }
+ *
+ * <TextField name="email" error={errors.email} />
+ */
+
 export const useFormValidation = (state) => {
   const errors = {};
 
   // Name: required
-  if (!state.name.trim()) errors.name = "Name is required";
+  if (!state.name?.trim()) errors.name = "Name is required";
 
   // Email: required + format
   if (!state.email) {

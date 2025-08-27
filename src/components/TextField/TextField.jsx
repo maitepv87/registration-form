@@ -1,3 +1,23 @@
+/**
+ * Accessible TextField component
+ *
+ * Includes label, error messaging, ARIA attributes, and modular CSS.
+ * Designed for editorial clarity, onboarding, and scalable form architecture.
+ *
+ * Usage:
+ * <TextField
+ *   label="Name"
+ *   type="text"
+ *   name="name"
+ *   value={state.name}
+ *   onChange={onChange}
+ *   required
+ *   error={errors.name}
+ * />
+ * Supports type="text", "email", "password", "search", etc. —
+ * any valid HTML input type compatible with <input />.
+ */
+
 import styles from "./TextField.module.css";
 
 export const TextField = ({

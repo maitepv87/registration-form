@@ -1,15 +1,18 @@
+/* Container for label + input + error */
 .field {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
 }
 
+/* Label styling */
 .label {
     font-size: 0.875rem;
     margin-bottom: 0.25rem;
     color: #333;
 }
 
+/* Base input styling */
 .input {
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -17,14 +20,12 @@
     font-size: 0.875rem;
 }
 
+/* Error state styling */
 .input.invalid {
     border-color: #d9534f;
 }
 
-.error {
-    border-color: red;
-}
-
+/* Error message styling */
 .errorMessage {
     color: red;
     font-size: 0.75rem;

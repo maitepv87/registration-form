@@ -26,7 +26,6 @@ export const RegistrationForm = () => {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.log("Form submitted:", state);
       handleReset();
-      setIsSubmitting(false);
     }
   };
 
