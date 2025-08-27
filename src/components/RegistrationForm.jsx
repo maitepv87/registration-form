@@ -1,4 +1,4 @@
-import { useFormReducer } from "../hooks";
+import { useFormReducer, useFormValidation } from "../hooks";
 import { useState } from "react";
 import { TextField, CheckboxField, ButtonBase, SelectField } from "./";
 import styles from "../styles/RegistrationForm.module.css";
@@ -18,6 +18,19 @@ export const RegistrationForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const newErrors = useFormValidation(state);
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      console.log("Form submitted:", state);
+      handleReset();
+    }
+  };
+
+  const handleReset = () => {
+    onReset();
+    setErrors({});
   };
 
   return (
@@ -38,7 +51,7 @@ export const RegistrationForm = () => {
         <SelectField
           label="Country"
           name="country"
-          checked={state.country}
+          value={state.country}
           options={[
             { label: "USA", value: "us" },
             { label: "Canada", value: "ca" },
@@ -92,7 +105,7 @@ export const RegistrationForm = () => {
           Register
         </ButtonBase>
 
-        <ButtonBase type="button" variant="secondary" onClick={onReset}>
+        <ButtonBase type="button" variant="secondary" onClick={handleReset}>
           Clear
         </ButtonBase>
       </form>

@@ -20,7 +20,7 @@
 
 import { useReducer } from "react";
 
-function reducer(state, action) {
+const reducer = (state, action) => {
   switch (action.type) {
     case "CHANGE":
       return {
@@ -32,9 +32,9 @@ function reducer(state, action) {
     default:
       return state;
   }
-}
+};
 
-export function useFormReducer(initialState) {
+export const useFormReducer = (initialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const onChange = (e) => {
@@ -53,5 +53,6 @@ export function useFormReducer(initialState) {
     dispatch,
     onChange,
     onReset,
+    initialState,
   };
-}
+};
