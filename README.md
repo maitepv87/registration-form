@@ -1,12 +1,61 @@
-# React + Vite
+# Registration Form – React Practice Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is part of a personal series of React exercises focused on improving fluency, architectural clarity, and emotionally intelligent UI design.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To practice:
 
-## Expanding the ESLint configuration
+- Modular form architecture using reducer-based state
+- Editorial validation logic with reusable error handling
+- Accessible field components with ARIA support
+- Emotionally clear submission feedback and reset flow
+- Documentation for onboarding and interview defense
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Registration form with name, email, password, country, and agreement checkbox
+- Custom reducer hook for controlled form state and reset logic
+- Validation hook with editorial error messages
+- Success message shown after valid submission
+- Scoped styling with pure CSS modules
+
+## Structure
+
+- `hooks/`
+
+  - `useFormReducer`: reducer-based form state management
+  - `useFormValidation`: field-level validation logic
+
+- `components/`
+
+  - `TextField`, `SelectField`, `CheckboxField`: modular, accessible inputs
+  - `ButtonBase`: reusable button component
+
+- `styles/`
+  - `RegistrationForm.module.css`: scoped layout and form styling
+
+## Notes
+
+This repo is part of the **React Practice Series**, a collection of small projects designed to:
+
+- Reinforce reusable patterns
+- Improve technical storytelling
+- Build confidence in architectural decisions
+
+Each project is:
+
+- Small in scope, big in clarity
+- Documented for onboarding and reuse
+- Designed to turn friction into fluency
+
+## 🚀 Next Steps
+
+- Add loading and error states for async submission
+- Integrate with backend API or localStorage
+- Replace custom validation with a schema-based library (`zod`, `yup`)
+- Create variants of the form for login, contact, or modal onboarding
+
+---
+
+For practicing React and improving proficiency.
