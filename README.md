@@ -2,6 +2,8 @@
 
 This project is part of a personal series of React exercises focused on improving fluency, architectural clarity, and emotionally intelligent UI design.
 
+![Registration Form Screenshot](./src/assets/Screenshot.png)
+
 ## Purpose
 
 To practice:
@@ -49,7 +51,7 @@ Each project is:
 - Documented for onboarding and reuse
 - Designed to turn friction into fluency
 
-## 🚀 Next Steps
+## Next Steps
 
 - Add loading and error states for async submission
 - Integrate with backend API or localStorage

@@ -1,7 +1,7 @@
-import { useFormReducer, useFormValidation } from "../hooks";
+import { useFormReducer, useFormValidation } from "../../hooks";
 import { useState } from "react";
-import { TextField, CheckboxField, ButtonBase, SelectField } from "./";
-import styles from "../styles/RegistrationForm.module.css";
+import { TextField, CheckboxField, ButtonBase, SelectField } from "..";
+import styles from "./RegistrationForm.module.css";
 
 const initialForm = {
   name: "",

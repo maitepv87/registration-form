@@ -1,0 +1,46 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    overflow: hidden;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 480px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.form h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #1a1a1a;
+}
+
+@media (max-width: 600px) {
+    .form {
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .form h2 {
+        font-size: 1.6rem;
+    }
+}
